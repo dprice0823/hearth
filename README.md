@@ -6,6 +6,8 @@ Hearth is a private AI assistant you can talk to like ChatGPT — but it runs on
 
 It gives you a clean chat window in your browser, powered by AI models running locally through a free tool called [Ollama](https://ollama.com).
 
+![Hearth chat window](docs/chat.png)
+
 ---
 
 ## Why you might want it
@@ -40,6 +42,16 @@ Install Ollama from **[ollama.com](https://ollama.com)** — it's a normal one-c
 - **Projects.** Tell Hearth about the folders you work in, and each one gets its own chat that already knows the context.
 
 ---
+
+## Screenshots
+
+**Browse the whole Ollama library and see what fits your GPU before you download** — green means it runs fully on your card, red means it would spill to the CPU:
+
+![Get models — GPU-aware model browser](docs/get-models.png)
+
+**A clean start screen** with your conversations in the sidebar and nothing sent anywhere:
+
+![Hearth welcome screen](docs/welcome.png)
 
 ## Setting it up
 
@@ -115,3 +127,7 @@ Everything personal (your chats, memory, and settings) is stored quietly in a fo
 ## License
 
 Hearth is free and open source under the [GNU General Public License v3.0](LICENSE). You're welcome to use it, study it, share it, and change it; if you distribute your own changed version, it needs to stay open under the same license.
+
+---
+
+*Built with [Claude](https://claude.com/claude-code).*
