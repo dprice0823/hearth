@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d2621"/><stop offset="1" stop-color="#151210"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.72" r="0.5"><stop offset="0" stop-color="#ff9a52" stop-opacity=".55"/><stop offset="1" stop-color="#ff9a52" stop-opacity="0"/></radialGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a7d6e"/><stop offset="1" stop-color="#5b5147"/></linearGradient>
+    <linearGradient id="flameO" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d2552a"/><stop offset=".55" stop-color="#ef8845"/><stop offset="1" stop-color="#ffc56b"/></linearGradient>
+    <linearGradient id="flameI" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffb35c"/><stop offset="1" stop-color="#fff0c2"/></linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#bg)"/>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="2"/>
+  <ellipse cx="64" cy="92" rx="44" ry="30" fill="url(#glow)"/>
+  <!-- stone arch -->
+  <path d="M26 104V66a38 38 0 0 1 76 0v38" fill="none" stroke="url(#stone)" stroke-width="11" stroke-linecap="round"/>
+  <g stroke="#2d2621" stroke-width="2.2" stroke-linecap="round" opacity=".9">
+    <path d="M21 80h11M96 80h11M24 94h8M96 94h8M31 45l8 6M97 45l-8 6M52 29l3 9M76 29l-3 9"/>
+  </g>
+  <path d="M34 64a30 30 0 0 1 60 0" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2" stroke-linecap="round"/>
+  <!-- logs -->
+  <rect x="40" y="96" width="48" height="8" rx="4" fill="#6b4a33"/>
+  <rect x="44" y="90" width="40" height="7" rx="3.5" fill="#8a5d3d" transform="rotate(-6 64 93)"/>
+  <!-- flame -->
+  <path d="M64 44c3 10 16 16 16 31 0 10-7 17-16 17s-16-7-16-17c0-8 5-12 7-18 2 5 3 8 6 9-1-8 0-15 3-22z" fill="url(#flameO)"/>
+  <path d="M64 62c2 6 8 9 8 17 0 5-3.5 9-8 9s-8-4-8-9c0-5 3-7 4-10 1 3 2 4 3.5 4.5-.5-4 0-8 .5-11.5z" fill="url(#flameI)"/>
+</svg>

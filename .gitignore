@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local, per-install config (personal project chips — never commit)
+projects.json
+hearth/projects.json
+
+# User data (chats, memory, settings, uploads) live in ~/.local/share/hearth
+# and are never part of the source tree, but ignore them if they ever appear here.
+data/
+*.sqlite
+*.sqlite3
+
+# Editor / OS cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Debian build output
+*.deb

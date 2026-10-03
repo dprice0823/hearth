@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>Hearth</title>
+  <link rel="icon" href="/hearth.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#141210">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="/vendor/github-dark.min.css" id="hl-dark">
+  <link rel="stylesheet" href="/vendor/github.min.css" id="hl-light" disabled>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor/marked.min.js" defer></script>
+  <script src="/vendor/purify.min.js" defer></script>
+  <script src="/vendor/highlight.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5c-2.3-2.4-3.5-5.2-3.5-8.5S9.7 5.9 12 3.5z"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7a4 4 0 0 0-2-2zM6 21l3-3M3 18l3 3"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9.5 4.5A2.5 2.5 0 0 0 7 7a2.8 2.8 0 0 0-2.5 4 3 3 0 0 0 .8 4.7A2.8 2.8 0 0 0 9.5 19.5V4.5zM14.5 4.5A2.5 2.5 0 0 1 17 7a2.8 2.8 0 0 1 2.5 4 3 3 0 0 1-.8 4.7 2.8 2.8 0 0 1-4.2 3.8V4.5z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+    <symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.3M20 4.5V11h-6.5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M10 11v6M14 11v6M6.5 7l.8 11.2A2 2 0 0 0 9.3 20h5.4a2 2 0 0 0 2-1.8L17.5 7M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 16v5M8 3.5h8l-1 6 3 3.5H6l3-3.5z"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M15.5 5.5l3 3L9 18H6v-3z"/><path d="m13.5 7.5 3 3"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5 13.6 9a3 3 0 0 0 2 2l5.4 1.5-5.4 1.6a3 3 0 0 0-2 2L12 21.5 10.4 16a3 3 0 0 0-2-2L3 12.5 8.4 11a3 3 0 0 0 2-2z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="m4 17.5 5-5 4 4 2.5-2.5 4.5 4.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M13.5 3.5H7.5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-10z"/><path d="M13.5 3.5v5h5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="18" cy="12" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.5 8.5 4.5-8.5 4.5L3.5 8z"/><path d="m3.5 12.5 8.5 4.5 8.5-4.5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M4.8 12 Q12 6.5 19.2 12 Q12 17.5 4.8 12 Z"/><circle cx="12" cy="12" r="1.9"/><circle cx="12" cy="12" r="9.2"/><line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 9v4M12 16.5v.5"/><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></symbol>
+  </defs>
+</svg>
+
+<div id="app" class="app">
+  <!-- ======================= sidebar ======================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img src="/hearth.svg" alt="" class="brand-logo">
+      <span class="brand-name">Hearth</span>
+      <button class="icon-btn only-narrow" id="close-sidebar" title="Close"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <button class="new-chat" id="new-chat"><svg><use href="#i-plus"/></svg>New chat<span class="np-btn" id="new-private" title="Private chat — not saved to disk"><svg><use href="#i-eye-off"/></svg></span></button>
+    <label class="search">
+      <svg><use href="#i-search"/></svg>
+      <input id="chat-search" type="search" placeholder="Search chats" autocomplete="off">
+    </label>
+    <nav class="chat-list" id="chat-list"></nav>
+    <div class="sidebar-foot">
+      <button class="foot-btn" id="open-memory"><svg><use href="#i-brain"/></svg><span>Memory</span><span class="count" id="memory-count">0</span></button>
+      <button class="foot-btn" id="open-settings"><svg><use href="#i-gear"/></svg><span>Settings</span></button>
+      <div class="status" id="status"><span class="dot"></span><span id="status-text">Connecting…</span></div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- ======================= main ======================= -->
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="toggle-sidebar" title="Toggle sidebar (Ctrl B)"><svg><use href="#i-sidebar"/></svg></button>
+      <div class="model-picker" id="model-picker">
+        <button class="model-btn" id="model-btn">
+          <span class="model-name" id="model-name">Choose a model</span>
+          <span class="model-caps" id="model-caps"></span>
+          <svg class="chev"><use href="#i-down"/></svg>
+        </button>
+        <div class="menu model-menu" id="model-menu" hidden>
+          <input class="menu-filter" id="model-filter" placeholder="Filter models" autocomplete="off">
+          <div id="model-list"></div>
+          <button class="get-models" id="get-models"><svg><use href="#i-plus"/></svg>Get models…</button>
+        </div>
+      </div>
+      <div class="title-wrap"><span class="chat-title" id="chat-title" title="Double-click to rename"></span></div>
+      <div class="toggles">
+        <button class="toggle" id="toggle-web" title="Let the assistant search and read the web"><svg><use href="#i-globe"/></svg><span>Web</span></button>
+        <button class="toggle" id="toggle-tools" title="Let the assistant use tools (search, calculator, memory…)"><svg><use href="#i-tools"/></svg><span>Tools</span></button>
+        <button class="ctx-meter" id="ctx-meter" title="">
+          <svg viewBox="0 0 36 36" class="ring"><circle cx="18" cy="18" r="14" class="ring-track"/><circle cx="18" cy="18" r="14" class="ring-fill" id="ring-fill"/></svg>
+          <span id="ctx-text">0</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="incognito-banner" id="incognito-banner" hidden><svg><use href="#i-eye-off"/></svg> Private chat — not saved to disk; it disappears when you leave it.</div>
+    <section class="thread" id="thread">
+      <div class="thread-inner" id="messages"></div>
+    </section>
+
+    <div class="composer-wrap">
+      <div class="composer" id="composer">
+        <div class="attachments" id="attachments"></div>
+        <div class="composer-row">
+          <button class="icon-btn attach-btn" id="attach-btn" title="Attach files"><svg><use href="#i-plus"/></svg></button>
+          <textarea id="input" rows="1" placeholder="Message Hearth…" autocomplete="off"></textarea>
+          <button class="send-btn" id="send-btn" title="Send (Enter)" disabled><svg><use href="#i-send"/></svg></button>
+        </div>
+        <input type="file" id="file-input" multiple hidden>
+      </div>
+      <div class="hint">Enter to send · Shift + Enter for a new line · paste or drop files anywhere</div>
+    </div>
+  </main>
+
+  <!-- ======================= memory drawer ======================= -->
+  <aside class="drawer" id="memory-drawer" hidden>
+    <div class="drawer-head">
+      <div><h2>Memory</h2><p>Things Hearth remembers about you across every chat. It adds to this when you share lasting details.</p></div>
+      <button class="icon-btn" data-close="memory-drawer"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <form class="memory-add" id="memory-form">
+      <input id="memory-input" placeholder="Add something to remember…" autocomplete="off">
+      <button class="btn primary" type="submit">Add</button>
+    </form>
+    <div class="memory-list" id="memory-list"></div>
+  </aside>
+
+  <!-- ======================= settings ======================= -->
+  <div class="modal" id="settings-modal" hidden>
+    <div class="modal-card">
+      <div class="modal-head"><h2>Settings</h2><button class="icon-btn" data-close="settings-modal"><svg><use href="#i-x"/></svg></button></div>
+      <div class="modal-body" id="settings-body">
+        <div class="field"><label>Your name</label><input id="s-user_name" placeholder="How Hearth should address you"></div>
+        <div class="field"><label>Appearance</label>
+          <div class="seg" id="s-theme"><button data-v="system">System</button><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
+        <div class="field row"><div><label>Show tooltip on hover</label><p class="help">Hovering a model shows its full description (from ollama.com) in model lists and the Get models window.</p></div><button class="switch" id="s-hover_tips"></button></div>
+        <div class="field"><label><span>Context window for <b id="s-ctx-model">this model</b></span><span class="val" id="s-ctx-val"></span></label>
+          <input type="range" id="s-ctx" min="2048" max="32768" step="1024">
+          <p class="help">Bigger remembers more of the conversation but uses more GPU memory. On a 6 GB card, 8k–16k is a good balance.</p></div>
+        <div class="field"><label>Summarize conversation at <span class="val" id="s-compact-val"></span></label>
+          <input type="range" id="s-compact_at" min="0.5" max="0.9" step="0.05">
+          <p class="help">When a chat fills this much of the context window, older messages are summarized automatically so the chat can keep going.</p></div>
+        <div class="field row"><div><label>Allow local network pages</label><p class="help">Let the assistant read pages on 192.168.x.x and localhost.</p></div><button class="switch" id="s-allow_local_urls"></button></div>
+        <div class="field">
+          <label>Browseable nodes</label>
+          <p class="help">Specific hostnames or host:port addresses the assistant may fetch even when "Allow local network pages" is off — e.g. <code>nas.local</code> or <code>192.168.1.10:8080</code>. One per line.</p>
+          <textarea id="s-browseable_nodes" rows="3" placeholder="nas.local&#10;192.168.1.10:8096&#10;homeassistant.local:8123"></textarea>
+        </div>
+        <div class="field">
+          <label>Extra workspace paths</label>
+          <p class="help">Additional directories the assistant may read and write when in coding mode (internet off). The default workspace <code>~/hearth-workspace</code> is always included. One absolute path per line.</p>
+          <textarea id="s-workspace_paths" rows="3" placeholder="/home/you/projects&#10;/srv/data"></textarea>
+          <button type="button" class="btn" id="browse-folder">Browse folders…</button>
+        </div>
+        <div class="field"><label>Custom instructions</label><textarea id="s-system_prompt" rows="4" placeholder="E.g. Keep answers short. I run a homelab with Proxmox and Docker."></textarea></div>
+      </div>
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <div class="field"><label>Generation settings apply to</label>
+            <div class="seg" id="s-scope"><button data-scope="global" class="on">Global</button><button data-scope="model">This model</button><button data-scope="chat">This chat</button></div>
+            <p class="help" id="s-scope-note"></p>
+            <button type="button" class="btn" id="s-clear-scope" hidden style="margin-top:6px">Clear these overrides (inherit)</button></div>
+          <div class="field"><label>Presets</label><div class="presets" id="s-presets"></div></div>
+          <div class="field"><label>Creativity (temperature) <span class="val" id="s-temp-val"></span></label>
+            <input type="range" id="s-temperature" min="0" max="1.5" step="0.05"></div>
+          <div class="field"><label>Top P <span class="val" id="s-topp-val"></span></label>
+            <input type="range" id="s-top_p" min="0.1" max="1" step="0.05">
+            <p class="help">Nucleus sampling — lower = safer/predictable wording, higher = more variety.</p></div>
+          <div class="field"><label>Top K <span class="val" id="s-topk-val"></span></label>
+            <input type="range" id="s-top_k" min="1" max="100" step="1"></div>
+          <div class="field"><label>Reasoning effort</label>
+            <div class="seg" id="s-reasoning"><button data-r="off">Off</button><button data-r="low">Low</button><button data-r="medium">Med</button><button data-r="high">High</button><button data-r="on">On</button></div>
+            <p class="help">Graded low/med/high only affects models that support it (e.g. gpt-oss); other models treat anything but Off as on.</p></div>
+          <div class="field"><label>Stop sequences</label>
+            <textarea id="s-stop" rows="2" placeholder="one sequence per line"></textarea>
+            <p class="help">The model stops generating if it produces any of these. One per line.</p></div>
+          <div class="field"><label>Keep recent messages <span class="val" id="s-keep-val"></span></label>
+            <input type="range" id="s-keep_recent" min="2" max="20" step="1">
+            <p class="help">When a long chat is summarized to save space, this many of the most recent messages stay word-for-word.</p></div>
+          <div class="field row"><div><label>Web access</label><p class="help">Search &amp; read the internet (same as the Web button up top).</p></div><button class="switch" id="s-internet"></button></div>
+          <div class="field row"><div><label>Tools</label><p class="help">Allow tools at all — web, files, images, memory (same as the Tools button).</p></div><button class="switch" id="s-tools"></button></div>
+        </details>
+      <div class="modal-foot"><span class="help" id="s-version"></span><button class="btn primary" id="settings-save">Done</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="models-modal" hidden>
+    <div class="modal-card">
+      <div class="modal-head"><h2>Get models</h2><button class="icon-btn" data-close="models-modal"><svg><use href="#i-x"/></svg></button></div>
+      <div class="modal-body">
+        <div class="field"><label>Pull any model by name</label>
+          <div class="pull-row"><input id="pull-name" placeholder="e.g. qwen2.5:7b" autocomplete="off" autocapitalize="none" spellcheck="false"><button class="btn primary" id="pull-btn">Pull</button></div>
+          <p class="help">Any name from <code>ollama.com/library</code>. Downloads run on this computer via Ollama.</p></div>
+        <div class="field">
+          <div class="seg" id="models-tabs"><button data-tab="rec" class="on">Recommended</button><button data-tab="all">Full library</button></div>
+          <p class="help" id="models-vram"></p>
+          <input id="lib-search" class="lib-search" type="text" placeholder="Search the library…" autocomplete="off" autocapitalize="none" spellcheck="false" hidden>
+          <div id="available-list"></div></div>
+      </div>
+      <div class="modal-foot"><span class="help">New models appear in the picker once installed.</span><button class="btn primary" data-close="models-modal">Done</button></div>
+    </div>
+  </div>
+  <div class="modal" id="summary-modal" hidden>
+    <div class="modal-card">
+      <div class="modal-head"><h2>Conversation summary</h2><button class="icon-btn" data-close="summary-modal"><svg><use href="#i-x"/></svg></button></div>
+      <div class="modal-body md" id="summary-body"></div>
+    </div>
+  </div>
+
+  <div class="drop-overlay" id="drop-overlay" hidden><div class="drop-box"><svg><use href="#i-file"/></svg><b>Drop files to attach</b><span>Images, PDFs, documents, code, logs…</span></div></div>
+  <div class="menu floating" id="chat-menu" hidden></div>
+  <div class="toasts" id="toasts"></div>
+</div>
+</body>
+</html>

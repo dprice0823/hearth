@@ -1,0 +1,21 @@
+Package: hearth
+Version: @VERSION@
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.10), curl, xdg-utils
+Recommends: poppler-utils
+Maintainer: dprice0823 <269845988+dprice0823@users.noreply.github.com>
+Homepage: https://github.com/dprice0823/hearth
+Description: Private, local AI chat for Ollama
+ Hearth is a private AI assistant that runs entirely on your own computer,
+ talking to local models through Ollama. It gives you a browser chat window
+ with tools, web access, long-term memory, a jailed coding workspace and
+ optional local image generation.
+ .
+ It listens on 127.0.0.1 only, so nothing you type or share ever leaves your
+ machine, and there is no account or login. Your chats, memory and settings
+ are stored per-user under ~/.local/share/hearth.
+ .
+ Hearth needs Ollama (https://ollama.com) to run the actual models; Ollama is
+ not packaged here and must be installed separately.

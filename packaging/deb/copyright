@@ -1,0 +1,29 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: hearth
+Source: https://github.com/dprice0823/hearth
+
+Files: *
+Copyright: 2026 dprice0823
+License: GPL-3
+
+Files: web/vendor/*
+Copyright: marked contributors; highlight.js contributors; Cure53 (DOMPurify)
+License: MIT
+ Bundled third-party JavaScript/CSS libraries, each under the MIT license.
+ See their respective upstream projects for full text.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 3.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in /usr/share/common-licenses/GPL-3.

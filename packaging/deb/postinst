@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+
+# Pre-compile the Python for faster first start (ignore failures).
+python3 -m compileall -q /usr/share/hearth/hearth 2>/dev/null || true
+
+# Enable the per-user service for all users; it starts at their next login.
+# The /usr/bin/hearth launcher also starts it on demand.
+systemctl --global enable hearth.service >/dev/null 2>&1 || true
+
+# Refresh the application menu and icon cache.
+update-desktop-database -q /usr/share/applications 2>/dev/null || true
+gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor 2>/dev/null || true
+
+echo "Hearth installed. Launch it from your menu or by running: hearth"
+echo "It needs Ollama to run models — install it from https://ollama.com if you haven't."
+
+exit 0

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+    update-desktop-database -q /usr/share/applications 2>/dev/null || true
+    gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor 2>/dev/null || true
+fi
+
+# Note: per-user data in ~/.local/share/hearth is intentionally left in place.
+
+exit 0

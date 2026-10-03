@@ -1,0 +1,13 @@
+[Unit]
+Description=Hearth local AI chat server
+After=network-online.target
+
+[Service]
+WorkingDirectory=/usr/share/hearth
+ExecStart=/usr/bin/python3 -m hearth.server
+Environment=HEARTH_PORT=8410
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

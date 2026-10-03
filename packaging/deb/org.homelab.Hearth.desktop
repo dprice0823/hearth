@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Hearth
+GenericName=AI Chat
+Comment=Chat with your local AI models — with web access, tools, memory and files
+Exec=hearth
+Icon=org.homelab.Hearth
+Terminal=false
+Categories=Utility;Network;Chat;
+Keywords=ai;chat;ollama;llm;assistant;
+StartupWMClass=Hearth
